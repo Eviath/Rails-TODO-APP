@@ -1,0 +1,10 @@
+
+
+<h2>Let's start from creating new list!</h2>
+<%= link_to  "New TODO", new_list_path %>
+
+
+
+<% @listall.each do |list| %>
+  <%= render "list", list: list %>
+<% end %>

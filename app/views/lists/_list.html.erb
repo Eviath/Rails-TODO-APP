@@ -1,0 +1,6 @@
+<li>
+  <%= list.title %>
+ <%= link_to 'Visit', list %>
+   <%= link_to "Delete", list, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+</li>
