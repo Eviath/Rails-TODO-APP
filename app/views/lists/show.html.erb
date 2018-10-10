@@ -4,4 +4,21 @@
 <li>
   <%= @list.title %>
 
+
+
+<%= render "tasks/new_form" %>
+
+# Uncompleted tasks
+<% @todo.each do |task| %>
+  <%= render "tasks/task", task: task %>
+<% end %>
+
+# completed tasks
+<% @completed_tasks.each do |task| %>
+  <%= render "tasks/task", task: task %>
+<% end %>
 </li>
+
+
+
+<%= link_to  "Back", root_path %>

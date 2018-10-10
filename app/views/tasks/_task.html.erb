@@ -1,0 +1,7 @@
+<li id="<%= task.id %>">
+  <%= task.title %>
+  <div class="buttons">
+    <%= render "tasks/destroy_form", task: task %>
+    <%= render "tasks/update_form", task: task %>
+  </div>
+</li>

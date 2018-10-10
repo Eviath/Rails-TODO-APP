@@ -9,6 +9,9 @@ class ListsController < ApplicationController
 
   def show 
     @list = List.find(params[:id])
+    @task = @list.tasks.new
+    @todo = @list.tasks.where(completed: false).order(id: :desc)
+    @completed_tasks = @list.tasks.where(completed: true).order(id: :desc)
   end
 
   def destroy
@@ -29,6 +32,7 @@ class ListsController < ApplicationController
   end
 
 private
+
 def list_param
   params.require(:list).permit(:title)
 end
