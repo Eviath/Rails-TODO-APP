@@ -19,6 +19,7 @@ class ListsController < ApplicationController
     @list.destroy
     flash[:success] = "List Deleted"
     redirect_to request.referrer || root_url
+    
   end
 
   def create

@@ -1,7 +1,28 @@
-<li id="<%= task.id %>">
-  <%= task.title %>
-  <div class="buttons">
+<div id="<%= task.id %>" class="row">
+
+
+<div class="col-md-8 task-col mx-auto">
+
+<li>
+
+
+<div class="task-name">
+<%= task.title %> 
+</div>
+  
+  <div class="task-date">
+    <%= task.created_at %> 
+  </div>
+  
+
+  <div class="task-buttons">
     <%= render "tasks/destroy_form", task: task %>
     <%= render "tasks/update_form", task: task %>
   </div>
+
+
 </li>
+
+
+</div>
+</div>

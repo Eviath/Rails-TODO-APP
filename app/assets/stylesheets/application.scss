@@ -30,15 +30,15 @@
  body {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
-    color: $white;
-    background: $dark;
+    color: $c-2;
+    background: $c-1;
  }
 
  a {
-     color: $yellow;
+     color: $c-2;
  
  &:hover {
-    color:$red;
+    color:$c-3;
  }   
 }
 
@@ -48,13 +48,13 @@
 }
 
 .btn-outline-warning {
-    color: $yellow;
-    background-color: $dark;
-    border-color: $yellow;
+    color: $c-2;
+    background-color: $c-1;
+    border-color: $c-2;
     &:hover, &:active, &:focus {
-        background-color: $dark !important;
-        border-color: $red!important;
-        color: $red!important;
+        background-color: $c-1 !important;
+        border-color: $c-3!important;
+        color: $c-3!important;
       
     }
     &:focus, &:active { 
@@ -64,7 +64,7 @@
 
 .form-control{
     &:focus, &:active {
-        border-color: $red;
+        border-color: $c-3;
     box-shadow: 0 0 0 0.2rem rgba(255, 7, 7, 0.2) !important;
     }
 }

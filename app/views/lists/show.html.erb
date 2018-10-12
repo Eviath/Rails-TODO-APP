@@ -12,15 +12,60 @@
 
 <%= render "tasks/new_form" %>
 
-# Uncompleted tasks
-<% @todo.each do |task| %>
-  <%= render "tasks/task", task: task %>
-<% end %>
 
-# completed tasks
-<% @completed_tasks.each do |task| %>
-  <%= render "tasks/task", task: task %>
+
+<div class="container">
+<div class="row">
+
+
+<div class="tasks-header col-md-8 mx-auto">
+  <% if @todo.length == 0 %>  
+ <span id="todo-count-parent">You have nothing to do!</span>
+<% else %>
+  <span id="todo-count-parent">You have <%= pluralize(@todo.length, 'task') %> to complete.</span>
 <% end %>
+</div>
+</div>
+
+</div>
+
+
+<div class="container">
+
+  <ul class="todo" id="todo">
+    <% @todo.each do |task| %>
+      <%= render "tasks/task", task: task %>
+    <% end %>
+  </ul>
+
+</div>
+
+
+
+<div class="container">
+<div class="row">
+
+
+<div class="tasks-header col-md-8 mx-auto">
+  <% if @completed_tasks.length == 0 %>
+   <span id="completed-count-parent">You have not completed any tasks yet!</span>
+<% else %>
+   <span id="completed-count-parent">You have completed <%= pluralize(@completed_tasks.length, 'task') %>.</span>
+<% end %>
+</div>
+</div>
+
+</div>
+
+<div class="container">
+
+  <ul class="todo" id="completed">
+    <% @completed_tasks.each do |task| %>
+      <%= render "tasks/task", task: task %>
+    <% end %>
+  </ul>
+
+</div>
 
 
 <div class="form-button text-center">
