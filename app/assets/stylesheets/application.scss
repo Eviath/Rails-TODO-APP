@@ -10,8 +10,68 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
  */
+ @import "reset";
+
+
+ @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+
  @import "font-awesome-sprockets";
  @import "font-awesome";
+ 
+ @import "bootstrap";
+ @import "variables";
+
+
+
+
+ body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: $white;
+    background: $dark;
+ }
+
+ a {
+     color: $yellow;
+ 
+ &:hover {
+    color:$red;
+ }   
+}
+
+.form-button {
+    text-align: center;
+    padding: 50px;
+}
+
+.btn-outline-warning {
+    color: $yellow;
+    background-color: $dark;
+    border-color: $yellow;
+    &:hover, &:active, &:focus {
+        background-color: $dark !important;
+        border-color: $red!important;
+        color: $red!important;
+      
+    }
+    &:focus, &:active { 
+        box-shadow: 0 0 0 0.2rem rgba(255, 7, 7, 0.2) !important;
+    }
+}
+
+.form-control{
+    &:focus, &:active {
+        border-color: $red;
+    box-shadow: 0 0 0 0.2rem rgba(255, 7, 7, 0.2) !important;
+    }
+}
+
+
+
+@import "header";
+@import "lists";
+@import "tasks";
+

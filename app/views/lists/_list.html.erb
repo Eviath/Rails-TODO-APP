@@ -1,6 +1,53 @@
-<li>
-  <%= list.title %>
- <%= link_to 'Visit', list %>
-   <%= link_to "Delete", list, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-</li>
+
+<div class="container col-md-6 todo-list">
+
+
+
+
+<div class="row list-header">
+
+
+<div class="list-box list-name">
+ <%= list.title %>
+</div>
+
+<div class="list-box list-buttons ">
+
+<%= link_to list, {class: "btn btn-outline-warning"} do %>
+              <%= icon('fas', 'sign-in-alt') %>   
+        <% end %>
+
+<%= link_to list, :class => "btn btn-outline-warning", method: :delete,
+                                       data: { confirm: "Are you sure? All tasks will be removed." } do %>
+             <%= icon('far', 'trash-alt') %>    
+        <% end %>
+
+
+</div>
+
+
+
+</div>
+
+<div class="row list-footer">
+
+
+<div class="list--footer-box">
+<% if list.tasks.length == 0 %>
+ <span>You have not added any tasks!</span>
+<% else %>
+  <span>You have</span>  <%= pluralize(list.tasks.length, 'task') %> <span>on this list.</span>
+<% end %>
+</div>
+
+
+
+<div class="list--footer-box-date">
+ <span><%= l list.created_at, format: :long  %> |</span> Created <%= time_ago_in_words(list.created_at) %> ago.
+</div>
+
+
+</div>
+
+
+</div>

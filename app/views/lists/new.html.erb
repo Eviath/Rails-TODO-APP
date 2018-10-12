@@ -1,11 +1,24 @@
+
+<div class="container">
+
+<div class="col-md-6 mx-auto">
+
+
+
 <%= form_for @list, url: lists_path do |f| %>
+
 <%= render 'shared/error_messages' %>
-  <%= f.text_field :title, :id =>"item", :placeholder =>"List Title" %>
-  <%= button_tag( :id =>"add") do %>
-  Create List
+  <%= f.text_field :title, :id =>"item", :placeholder =>"List Title", :class => "form-control" %>
+ <div class="form-button text-center">
+  <%= button_tag( :id =>"add", :class => "btn btn-outline-warning") do %>
+  Create
   <% end %>
+</div>
 <% end %>
-    
+    </div>
+</div>
 
+<div class="form-button text-center">
+<%= link_to("Back", root_path, :class => "btn btn-outline-warning") %>
+</div>
 
-<%= link_to  "Back", root_path %>
