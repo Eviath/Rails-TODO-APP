@@ -1,17 +1,28 @@
+
+
+
 $("#<%= @task.id %>").fadeOut(1000, function() {
   $(this).remove();
 });
 
 
-<% if @todo.count == 0 %>
-$("#todo-count-parent").html('You have nothing to do!');
+
+<% if @list.tasks.length == 0 %>
+$("#task-count-parent").html('');
 <% else %>
-$("#todo-count-parent").html('You have <%= pluralize(@todo.count, 'task') %> to complete.');
+$("#task-count-parent").html('<%= @list.tasks.length %>');
 <% end %>
 
 
-<% if @completed_tasks.count == 0 %>
-$("#completed-count-parent").html('You have not completed any tasks yet!');
+<% if @todo.length == 0 %>
+$("#todo-count-parent").html('');
 <% else %>
-$("#completed-count-parent").html('You have completed <%= pluralize(@completed_tasks.count, 'task') %>.');
+$("#todo-count-parent").html('<%= @todo.length %>');
+<% end %>
+
+
+<% if @completed_tasks.length == 0 %>
+$("#completed-count-parent").html('');
+<% else %>
+$("#completed-count-parent").html('<%= @completed_tasks.length %>');
 <% end %>

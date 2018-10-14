@@ -1,11 +1,13 @@
 .jumbotron {
-    background: $c-2;
+    background-image: $g-1;
     width:100%;
     border-radius: 0;
+    -webkit-box-shadow: 0px 5px 20px -10px #292929;
+    box-shadow: 0px 5px 20px -10px #292929;
 
     h1 {
         font-size: 5em;
         font-weight: 700;
-        color: $c-1;
+        color: $white;
     }
 }

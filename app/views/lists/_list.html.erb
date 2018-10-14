@@ -1,5 +1,5 @@
 
-<div class="container col-md-6 todo-list">
+<div id="todo-list" class="container col-md-6 todo-list">
 
 
 
@@ -13,19 +13,17 @@
 
 <div class="list-box list-buttons ">
 
-<%= link_to list, {class: "btn btn-outline-warning"} do %>
+<%= link_to list, {class: "btn btn1 btn-outline-warning"} do %>
               <%= icon('fas', 'sign-in-alt') %>   
         <% end %>
 
-<%= link_to list, :class => "btn btn-outline-warning", method: :delete,
+<%= link_to list, :class => "btn btn2 btn-outline-warning", method: :delete,
                                        data: { confirm: "Are you sure? All tasks will be removed." } do %>
              <%= icon('far', 'trash-alt') %>    
         <% end %>
 
 
 </div>
-
-
 
 </div>
 
@@ -36,14 +34,14 @@
 <% if list.tasks.length == 0 %>
  <span>You have not added any tasks!</span>
 <% else %>
-  <span>You have</span>  <%= pluralize(list.tasks.length, 'task') %> <span>on this list.</span>
+  <span>You have</span> <span class="badge badge-light"> <%= pluralize(list.tasks.length, 'task') %></span> <span>on this list.</span>
 <% end %>
 </div>
 
 
 
 <div class="list--footer-box-date">
- <span><%= l list.created_at, format: :long  %> |</span> Created <%= time_ago_in_words(list.created_at) %> ago.
+ <span class="badge badge-light"><%= l list.created_at, format: :long  %></span> | <span class="badge badge-light">Created <%= time_ago_in_words(list.created_at) %> ago.</span>
 </div>
 
 

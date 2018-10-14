@@ -3,9 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.form-new-task {
+
+    .form-input{ 
+        width:90%;
+    }
+    padding: 20px;
+    margin: 0 auto;
+    width:50%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .task-col {
-    background-color: $c-2;
-    color: $c-3;
+    background-image: $g-1;
+    color: $white;
     padding: 10px;
     margin-bottom: 5px;
 
@@ -28,4 +40,6 @@
     background: $c-3;
     color: $c-2;
     text-align:center;
+
+
 }

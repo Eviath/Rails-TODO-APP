@@ -11,10 +11,20 @@
 </div>
   
   <div class="task-date">
-    <%= task.created_at %> 
-  </div>
-  
 
+  <span class="badge badge-light" >Created at: <%= l task.created_at, format: :long  %> | <%= time_ago_in_words(task.created_at) %> ago.</span> 
+
+
+<% if task.completed %>
+<span class="badge badge-light">Completed <%= time_ago_in_words(task.updated_at) %> ago. </span>  
+<% end %>
+
+
+
+
+  </div>
+
+  
   <div class="task-buttons">
     <%= render "tasks/destroy_form", task: task %>
     <%= render "tasks/update_form", task: task %>

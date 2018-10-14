@@ -1,49 +1,26 @@
+
+
+
 $("#<%= @task.id %>").remove();
+
+$("#task-count-parent").html('<%= @list.tasks.length %>');
 
 <% if @task.completed %>
 $("#completed").prepend( $(" <%= j render 'tasks/task', task: @task %>").hide().fadeIn(1100) );
 
 
-<% if @todo.count == 0 %>
-$("#todo-count-parent").html('You have nothing to do!');
-<% else %>
-$("#todo-count-parent").html('You have <%= pluralize(@todo.count, 'task') %> to complete.');
-<% end %>
-
-
-<% if @completed_tasks.count == 0 %>
-$("#completed-count-parent").html('You have not completed any tasks yet!');
-<% else %>
-$("#completed-count-parent").html('You have completed <%= pluralize(@completed_tasks.count, 'task') %>.');
-<% end %>
-
-
+$("#todo-count-parent").html('<%= @todo.length %>');
+$("#completed-count-parent").html('<%= @completed_tasks.length %>');
 
 
 <% else %>
 $("#todo").prepend( $(" <%= j render 'tasks/task', task: @task %>").hide().fadeIn(1100) );
        
-       
-       
-<% if @todo.count == 0 %>
-$("#todo-count-parent").html('You have nothing to do!');
-<% else %>
-$("#todo-count-parent").html('You have <%= pluralize(@todo.count, 'task') %> to complete.');
-<% end %>
 
-
-<% if @completed_tasks.count == 0 %>
-$("#completed-count-parent").html('You have not completed any tasks yet!');
-<% else %>
-$("#completed-count-parent").html('You have completed <%= pluralize(@completed_tasks.count, 'task') %>.');
-<% end %>
-
-
-
+$("#todo-count-parent").html('<%= @todo.length %>');
+$("#completed-count-parent").html('<%= @completed_tasks.length %>');
 
 
 
 <% end %>
-
-
 

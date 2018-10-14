@@ -1,5 +1,6 @@
 .todo-intro h2 {
-    color: $c-2;
+    color: $c-3;
+    font-weight: 300;
     text-align: center;
 }
 
@@ -9,69 +10,190 @@
     text-align: center;
 }
 
-.todo-list {
 
-    &:hover {
-        -webkit-box-shadow: 0px 13px 31px -13px #000000; 
-    box-shadow: 0px 13px 31px -13px #000000;
-    transition: 1s;
+.clicked {
+    -webkit-box-shadow: 0px 13px 31px -13px #000000 !important; 
+    box-shadow: 0px 13px 31px -13px #000000!important; 
     transform: translateY(-10px);
-   
-        
-}
+    color: $white;
+    border-radius:0 !important;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    background-image: $g-3;
 
-    background: $c-2;
-    transition: 1s;
-    margin-bottom: 25px;
 
-    .list--footer-box {
-        border-bottom: 3px solid $c-3;
-        width:45%;
-        background: transparent;
-        text-align: left;
-        
-        padding: 10px;
-        font-size: 1em;
-        font-weight: 700;
-        color: $c-3;
-        
-        span {
-        color: $c-1;
+    .list-buttons .btn.animation  {
+        animation: SHW .5s;
+        animation-fill-mode: both
+    }
+    @keyframes SHW {
+        from {
+            transform:scale(0.7);
+            opacity:0;
+        }
+        to {
+            transform: scale(1);
+            opacity:1;
         }
     }
 
-    .list--footer-box-date {
-        border-bottom: 3px solid $c-3;
-        width:55%;
+
+
+}
+
+.list-buttons {
+
+
+ a.btn1 {
+    width: 10%;
+    z-index:-5;
+    padding: 5px;
+    position:absolute;
+    right: -80px;
+    top: 53px; 
+    opacity: 0;
+
+    border-radius: 25px;
+
+ }
+
+ a.btn2 {
+     
+     width: 10%;
+
+   position:absolute;
+   left: -80px;
+   z-index:-5;
+   top: 53px;
+   padding: 5px;
+    opacity: 0;
+   border-radius: 25px;
+
+    
+}
+
+
+}
+
+.list-holder {
+    min-height: 700px;
+}
+
+
+.todo-list {
+
+
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 20px 20px 5px 5px;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    background-image: $g-3;
+    margin-bottom: 25px;
+
+
+
+ &::before {
+    content: '';
+    border-radius: 20px 20px 5px 5px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
+    background-image: $g-1;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+}
+
+
+
+
+    &:hover {
+        -webkit-box-shadow: 0px 13px 31px -13px #000000; 
+        box-shadow: 0px 13px 31px -13px #000000;
+        transform: translateY(-10px);
+        color: $white;
+        -webkit-transition: all 0.5s ease 0s;
+        -moz-transition: all 0.5s ease 0s;
+        -o-transition: all 0.5s ease 0s;
+        transition: all 0.5s ease 0s;
+
+        &::before {
+            content: '';
+            border-radius: 20px 20px 5px 5px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: $white;
+            bottom: 0px;
+            left: 0px;
+            z-index: 1;
+            background-image: $g-1;
+            opacity: 1;
+            -webkit-transition: all 0.5s ease 0s;
+            -moz-transition: all 0.5s ease 0s;
+            -o-transition: all 0.5s ease 0s;
+            transition: all 0.5s ease 0s;
+        }
+
+
+    
+        
+}
+
+
+    .list--footer-box {
+        display: none;
+        z-index: 5;
+        width:45%;
         background: transparent;
-        text-align: left;
+        text-align: center;
         
         padding: 10px;
         font-size: 1em;
         font-weight: 700;
-        color: $c-3;
         
-        span {
-        color: $c-1;
-        }
+
+    }
+
+    .list--footer-box-date {
+        display: none;
+        z-index: 5;
+        width:55%;
+        background: transparent;
+        text-align: center;
+    
+        padding: 10px;
+        font-size: 1em;
+        font-weight: 700;
+
     }
 
     .list-box {
     padding: 15px;
+    z-index: 5;
     }
     
 
-
-
     .list-header{
-      
         display:flex;
-        justify-content: space-between;
-        
-
-        color:$c-3;
+        flex-direction: column;
+        justify-content: center;
+      align-items: center;
         font-size: 2em;
 
     }
+
+
+
 
 }

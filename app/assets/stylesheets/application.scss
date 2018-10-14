@@ -14,8 +14,7 @@
  */
  @import "reset";
 
-
- @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+ @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700');
 
 
  @import "font-awesome-sprockets";
@@ -28,18 +27,22 @@
 
 
  body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 14px;
-    color: $c-2;
-    background: $c-1;
+    color: $c-3;
+    background: $white;
  }
 
  a {
-     color: $c-2;
+     color: $c-3;
  
  &:hover {
     color:$c-3;
  }   
+}
+
+.page-wrapper {
+    padding: 150px 0px 150px 0px;
 }
 
 .form-button {
@@ -48,30 +51,34 @@
 }
 
 .btn-outline-warning {
-    color: $c-2;
-    background-color: $c-1;
-    border-color: $c-2;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06) !important;
+    color: $c-3;
+    text-transform: uppercase;
+    background: transparent;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 100px;
+    border-color: $c-3;
+
     &:hover, &:active, &:focus {
+        
         background-color: $c-1 !important;
-        border-color: $c-3!important;
-        color: $c-3!important;
+        border-color: $c-1!important;
+        color: $white!important;
       
     }
-    &:focus, &:active { 
-        box-shadow: 0 0 0 0.2rem rgba(255, 7, 7, 0.2) !important;
-    }
+
 }
 
-.form-control{
-    &:focus, &:active {
-        border-color: $c-3;
-    box-shadow: 0 0 0 0.2rem rgba(255, 7, 7, 0.2) !important;
-    }
+.badge {
+    color: $c-3;
 }
+
 
 
 
 @import "header";
+@import "footer";
 @import "lists";
 @import "tasks";
 
