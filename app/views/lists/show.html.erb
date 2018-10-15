@@ -1,15 +1,28 @@
 
-
-
-
-
 <div class="container">
 
 <div class="list-show-name">
+
   <h2><%= @list.title %> </h2>
 
- <h2>  <span>You have</span> <span class="badge badge-light"> <%= pluralize(@list.tasks.length, 'task') %></span> <span>on this list.</span></h2>
-  <h2> <span class="badge badge-light"><%= l @list.created_at, format: :long  %></span> | <span class="badge badge-light">Created <%= time_ago_in_words(@list.created_at) %> ago.</span></h2> 
+  <h2>
+    You have 
+      <span class="badge badge-light"><%= pluralize(@list.tasks.length, 'task') %></span> 
+    on this list.
+  </h2>
+  
+
+  <h2>
+    <span class="badge badge-light">
+     <%= l @list.created_at, format: :long  %>
+    </span> 
+
+    | 
+
+    <span class="badge badge-light">
+      Created <%= time_ago_in_words(@list.created_at) %> ago.
+    </span>
+  </h2> 
 
 </div>
 
