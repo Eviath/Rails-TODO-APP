@@ -6,8 +6,9 @@
 
  <div class="form-new-task">
 
+
  <div class="form-input">
-<%= form_with(model: [ @list, @list.tasks.build ], remote: true) do |f| %>
+ <%= form_with(model: [ @list, @list.tasks.build ], remote: true) do |f| %>
    <%= f.text_field(:title, :id =>"item", :placeholder =>"Enter an activity..", :class => "form-control") %>
  </div>
 
@@ -15,9 +16,9 @@
   <%= button_tag( :id =>"add", :class => "btn btn-outline-warning") do %>
  <% icon('fas', 'plus') %>
   <% end %>
-<% end %>
-</div>
 
+</div>
+<% end %>
 
 
 </div>

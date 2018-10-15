@@ -1,16 +1,17 @@
+
+
+
+
+
 <div class="container">
 
-
-
-
 <div class="list-show-name">
-  <%= @list.title %> 
+  <h2><%= @list.title %> </h2>
 
-  <span id="task-count-parent" class="badge badge-light"><%= @list.tasks.count %></span>
+ <h2>  <span>You have</span> <span class="badge badge-light"> <%= pluralize(@list.tasks.length, 'task') %></span> <span>on this list.</span></h2>
+  <h2> <span class="badge badge-light"><%= l @list.created_at, format: :long  %></span> | <span class="badge badge-light">Created <%= time_ago_in_words(@list.created_at) %> ago.</span></h2> 
 
-  
 </div>
-
 
 
 
@@ -20,8 +21,7 @@
 
 
 
-
-<div class="container">
+<div class="container tasks-container">
 <nav>
   <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><span>Todo </span><span id="todo-count-parent" class="badge badge-light"><%= @todo.length %></span></a>

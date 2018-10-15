@@ -1,5 +1,15 @@
 <%= form_tag({:model => "list", :controller => "tasks", :action => "update", :id => task.id, :list_id => @list.id}, method: "put", remote: true) do %>
-  <%= button_tag(:class => "complete btn btn-outline-warning") do %>
-     <%= icon('fas', 'check-circle') %>    
+  <%= button_tag(:class => "complete btn btn-nobord") do %>
+
+
+
+<% if task.completed %>
+    <%= icon('fas', 'minus-square') %>    
+     <% else %>
+     <%= icon('fas', 'check-square') %>    
+  <% end %>
+
+
+
   <% end %>
 <% end %>

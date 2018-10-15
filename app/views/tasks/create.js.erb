@@ -1,7 +1,7 @@
 
-
 $("#item").val("");
 
 $('#todo').prepend( $("<%= j render 'task', task: @task %>").hide().fadeIn(1100) );
 $("#todo-count-parent").html('<%= @todo.length %>');
 $("#task-count-parent").html('<%= @list.tasks.length %>');
+$('[data-toggle="tooltip"]').tooltip();

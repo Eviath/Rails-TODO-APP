@@ -5,18 +5,32 @@
 
 <li>
 
+ <div class="task-date">
 
-<div class="task-name">
-<%= task.title %> 
+
+
+
+<div class="task--created-at">
+
+<span data-toggle="tooltip" data-placement="right" data-html="true" title="<span> <%= l task.created_at, format: :long  %> </span> ">
+<span class='badge badge-light'>Created <%= time_ago_in_words(task.created_at) %> ago.</span>
+</span>
+
 </div>
-  
-  <div class="task-date">
 
-  <span class="badge badge-light" >Created at: <%= l task.created_at, format: :long  %> | <%= time_ago_in_words(task.created_at) %> ago.</span> 
 
 
 <% if task.completed %>
-<span class="badge badge-light">Completed <%= time_ago_in_words(task.updated_at) %> ago. </span>  
+
+<div class="task--completed-at">
+
+<span data-toggle="tooltip" data-placement="right" data-html="true" title="<span> <%= l task.updated_at, format: :long  %> </span> ">
+<span class='badge badge-light'>Completed <%= time_ago_in_words(task.updated_at) %> ago.</span>
+</span>
+
+
+</div>
+
 <% end %>
 
 
@@ -24,11 +38,19 @@
 
   </div>
 
-  
+<div class="task-name">
+<%= task.title %> 
+</div>
+
   <div class="task-buttons">
     <%= render "tasks/destroy_form", task: task %>
     <%= render "tasks/update_form", task: task %>
   </div>
+  
+ 
+
+  
+
 
 
 </li>

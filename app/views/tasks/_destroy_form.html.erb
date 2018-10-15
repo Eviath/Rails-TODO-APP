@@ -1,5 +1,5 @@
 <%= form_tag({controller: "tasks", :action => "destroy", :id => task.id, :list_id => @list.id}, method: "delete", remote: true) do %>
-  <%= button_tag( :class => "remove btn btn-outline-warning", :data => { confirm: "Are you sure?" }) do %>
-     <%= icon('fas', 'minus-circle') %>    
+  <%= button_tag( :class => "remove btn btn-nobord", :data => { confirm: "Are you sure?" }) do %>
+     <%= icon('fas', 'trash-alt') %>    
   <% end %>
 <% end %>
