@@ -1,7 +1,25 @@
 
 
 
-$("#<%= @task.id %>").remove();
+$("#<%= @task.id %>").slideUp( function() {
+  $(this).remove();
+});
+
+
+<% if @completed_tasks.length == 0 %>
+$("#completed-count-parent").fadeOut()
+<% else %>
+$("#completed-count-parent").fadeIn()
+$("#completed-count-parent").removeClass('not-displayed')
+<% end %>
+
+<% if @todo.length == 0 %>
+$("#todo-count-parent").fadeOut()
+<% else %>
+$("#todo-count-parent").fadeIn()
+$("#todo-count-parent").removeClass('not-displayed')
+<% end %>
+
 
 $("#task-count-parent").html('<%= @list.tasks.length %>');
 
@@ -20,8 +38,7 @@ $("#todo").prepend( $(" <%= j render 'tasks/task', task: @task %>").hide().fadeI
 $("#todo-count-parent").html('<%= @todo.length %>');
 $("#completed-count-parent").html('<%= @completed_tasks.length %>');
 
-
-
 <% end %>
+
 
 $('[data-toggle="tooltip"]').tooltip();

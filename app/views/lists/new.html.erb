@@ -7,7 +7,7 @@
 
 <%= form_for @list, url: lists_path do |f| %>
 
-<%= render 'shared/error_messages' %>
+<%= render 'shared/error_messages', object: @list %>
   <%= f.text_field :title, :id =>"item", :placeholder =>"List Title", :class => "form-control" %>
  <div class="form-button text-center">
   <%= button_tag( :id =>"add", :class => "btn btn-outline-warning") do %>

@@ -2,8 +2,24 @@
 
 <div class="page-wrapper">
 
-<div class="container">
-<div class="col-md-12 todo-intro">
+
+<div class=" todo-intro">
+
+
+
+<div class="list-holder">
+
+<% if @listall.any? %>
+
+<div class="form-button center-text">
+<%= link_to("Create New TODO", new_list_path, :class => "btn btn-outline-warning") %>
+</div>
+
+<% @listall.each do |list| %>
+  <%= render "list", list: list %>
+<% end %>
+
+<% else %>
 
 <h2>Let's start by creating a new todo list!</h2>
 
@@ -11,16 +27,17 @@
 <%= link_to("Create New TODO", new_list_path, :class => "btn btn-outline-warning") %>
 </div>
 
-</div>
-</div>
-
-</div>
-
-
-<div class="list-holder">
-
-<% @listall.each do |list| %>
-  <%= render "list", list: list %>
 <% end %>
 
+
+
+
+
 </div>
+</div>
+
+</div>
+
+
+
+

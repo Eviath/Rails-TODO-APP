@@ -17,14 +17,15 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    flash[:success] = "List Deleted"
     redirect_to request.referrer || root_url
+    flash[:success] = "List (#{@list.title}) deleted successfully"
     
   end
 
   def create
     @list = List.create(list_param)
     if @list.save
+      flash[:success] = "List (#{@list.title}) created successfully"
       redirect_to root_path
     else
       render 'new'

@@ -12,60 +12,74 @@
  *
 
  */
- @import "reset";
+@import "reset";
 
- @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700');
-
-
- @import "font-awesome-sprockets";
- @import "font-awesome";
- 
- @import "bootstrap";
- @import "variables";
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700');
 
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@import "bootstrap";
+@import "variables";
 
 
- body {
+
+
+body {
     font-family: 'Quicksand', sans-serif;
     font-size: 14px;
     color: $c-3;
     background: $white;
- }
-
- a {
-     color: $c-3;
- 
- &:hover {
-    color:$c-3;
- }   
 }
 
+a {
+    color: $c-3;
+
+    &:hover {
+        color: $c-3;
+    }
+}
+
+.visible-opacity {
+    opacity: 1 !important;
+}
+
+
+.not-displayed {
+    display:none !important;
+}
+
+
 .page-wrapper {
-    padding: 150px 0px 150px 0px;
+    padding: 50px 0px 50px 0px;
 }
 
 .form-button {
     text-align: center;
-    padding: 50px;
+    padding: 50px 0px 100px 0px;
 }
 
 .btn-outline-warning {
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06) !important;
-    color: $c-3;
-    text-transform: uppercase;
     background: transparent;
+
+    text-transform: uppercase;
     font-weight: 700;
     font-size: 14px;
+    color: $c-3;
+
     border-radius: 100px;
     border-color: $c-3;
 
-    &:hover, &:active, &:focus {
-        
+    &:hover,
+    &:active,
+    &:focus {
+
         background-color: $c-1 !important;
-        border-color: $c-1!important;
-        color: $white!important;
-      
+        border-color: $c-1 !important;
+        color: $white !important;
+
     }
 
 }
@@ -75,10 +89,39 @@
 }
 
 
+.alert-success {
+    background-image: $g-1;
+
+    border-color: $c-1;
+    border-radius: 15px;
+
+    color: $c-2;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+button.btn.commit {
+    background-color: $c-3;
+    border-color: $c-3;
+    transition: 1s;
+
+    &:hover,
+    &:focus,
+    &:active {
+    transition: 1s;
+    background-color: $c-1;
+    border-color: $c-1;
+    }
+
+
+}
+
+
+
+
 
 
 @import "header";
 @import "footer";
 @import "lists";
 @import "tasks";
-

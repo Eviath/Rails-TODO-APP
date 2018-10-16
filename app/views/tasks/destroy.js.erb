@@ -1,28 +1,31 @@
 
 
 
-$("#<%= @task.id %>").fadeOut(1000, function() {
+$("#<%= @task.id %>").fadeOut(500, function() {
   $(this).remove();
 });
+$('.list--show-header').find( 'span.badge' ).addClass('animation-ring').delay(500).queue(function(){
+    $(this).removeClass('animation-ring').dequeue(); 
+  });
 
 
 
 <% if @list.tasks.length == 0 %>
-$("#task-count-parent").html('');
+$("#task-count-parent").fadeOut()
 <% else %>
 $("#task-count-parent").html('<%= @list.tasks.length %>');
 <% end %>
 
 
 <% if @todo.length == 0 %>
-$("#todo-count-parent").html('');
+$("#todo-count-parent").fadeOut()
 <% else %>
 $("#todo-count-parent").html('<%= @todo.length %>');
 <% end %>
 
 
 <% if @completed_tasks.length == 0 %>
-$("#completed-count-parent").html('');
+$("#completed-count-parent").fadeOut()
 <% else %>
 $("#completed-count-parent").html('<%= @completed_tasks.length %>');
 <% end %>

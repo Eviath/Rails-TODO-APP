@@ -1,7 +1,19 @@
 
 $("#item").val("");
 
-$('#todo').prepend( $("<%= j render 'task', task: @task %>").hide().fadeIn(1100) );
+$('#todo').prepend( $("<%= j render 'task', task: @task %>").hide().fadeIn(500) );
+
+$("#task-count-parent").removeClass('not-displayed')
+$("#todo-count-parent").removeClass('not-displayed')
+
+$("#task-count-parent").fadeIn()
+$("#todo-count-parent").fadeIn()
+
 $("#todo-count-parent").html('<%= @todo.length %>');
-$("#task-count-parent").html('<%= @list.tasks.length %>');
+$("#task-count-parent").html('<%= @list.tasks.count %>');
 $('[data-toggle="tooltip"]').tooltip();
+$('.list--show-header').find( 'span.badge' ).addClass('animation-ring').delay(1500).queue(function(){
+    $(this).removeClass('animation-ring').dequeue(); 
+  });
+
+

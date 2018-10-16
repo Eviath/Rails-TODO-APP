@@ -7,7 +7,7 @@
  <div class="form-new-task">
 
 
- <div class="form-input">
+ <div id="form-prep" class="form-input">
  <%= form_with(model: [ @list, @list.tasks.build ], remote: true) do |f| %>
    <%= f.text_field(:title, :id =>"item", :placeholder =>"Enter an activity..", :class => "form-control") %>
  </div>
@@ -19,7 +19,6 @@
 
 </div>
 <% end %>
-
 
 </div>
 
