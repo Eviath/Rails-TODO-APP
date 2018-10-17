@@ -17,6 +17,10 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 # rails jquery
 gem 'jquery-rails'
+
+# Bourbon SASS Styling
+gem "bourbon"
+
 gem 'sprockets-rails'
 # font awesome icons
 gem 'font-awesome-sass', '~> 5.3.1'

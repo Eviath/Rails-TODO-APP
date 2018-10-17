@@ -92,8 +92,11 @@
 
 }
 
-.list-buttons {
 
+
+
+// list delete/goto buttons
+.list-buttons {
 
     a.btn1 {
         width: 10%;
@@ -103,7 +106,6 @@
         right: -80px;
         top: 53px;
         opacity: 0;
-
         border-radius: 25px;
 
     }
@@ -111,7 +113,6 @@
     a.btn2 {
 
         width: 10%;
-
         position: absolute;
         left: -80px;
         z-index: -5;
@@ -119,12 +120,15 @@
         padding: 5px;
         opacity: 0;
         border-radius: 25px;
-
-
     }
 
-
 }
+
+
+
+
+
+
 
 .list-holder {
     min-height: 700px;
@@ -245,4 +249,74 @@
 
 
 
+}
+
+@include media-breakpoint-up(sm) { 
+
+    .todo-list {
+        width:50%;
+    }
+
+    .list-buttons {
+
+        a.btn1 {
+            width: 10%;
+            z-index: -5;
+            padding: 5px;
+            position: absolute;
+            right: -80px;
+            top: 53px;
+            opacity: 0;
+            border-radius: 25px;
+    
+        }
+    
+        a.btn2 {
+    
+            width: 10%;
+            position: absolute;
+            left: -80px;
+            z-index: -5;
+            top: 53px;
+            padding: 5px;
+            opacity: 0;
+            border-radius: 25px;
+        }
+    
+    }
+}
+
+@include media-breakpoint-up(xl) { 
+
+    .todo-list {
+        width:50%;
+    }
+
+    .list-buttons {
+
+        a.btn1 {
+            width: 10%;
+            z-index: -5;
+            padding: 5px;
+            position: absolute;
+            right: -120px;
+            top: 53px;
+            opacity: 0;
+            border-radius: 25px;
+    
+        }
+    
+        a.btn2 {
+    
+            width: 10%;
+            position: absolute;
+            left: -120px;
+            z-index: -5;
+            top: 53px;
+            padding: 5px;
+            opacity: 0;
+            border-radius: 25px;
+        }
+    
+    }
 }
