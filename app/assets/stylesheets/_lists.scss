@@ -207,7 +207,7 @@
     .list--footer-box {
         display: none;
         z-index: 5;
-        width: 45%;
+
         background: transparent;
         text-align: center;
         opacity: 0;
@@ -221,7 +221,7 @@
     .list--footer-box-date {
         display: none;
         z-index: 5;
-        width: 55%;
+
         background: transparent;
         text-align: center;
         opacity: 0;
@@ -251,7 +251,7 @@
 
 }
 
-@include media-breakpoint-up(sm) { 
+@include media-breakpoint-down(sm) { 
 
     .todo-list {
         width:50%;
