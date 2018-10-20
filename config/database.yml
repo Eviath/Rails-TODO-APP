@@ -6,7 +6,10 @@
 #
 default: &default
   adapter: postgresql
+  username: postgres
+  password: postgresuser
   pool: 5
+  host: localhost
   encoding: unicode
 
 development:
