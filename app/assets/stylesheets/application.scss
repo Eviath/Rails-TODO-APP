@@ -29,6 +29,11 @@
 @import "variables";
 
 
+// custom styles
+@import "header";
+@import "footer";
+@import "lists";
+@import "tasks";
 
 
 body {
@@ -126,7 +131,3 @@ button.btn.commit {
 
 
 
-@import "header";
-@import "footer";
-@import "lists";
-@import "tasks";
