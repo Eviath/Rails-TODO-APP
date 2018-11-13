@@ -1,60 +1,50 @@
 <div id="<%= task.id %>" class="row">
 
 
-<div class="col-md-8 task-col mx-auto">
+  <div class="col-md-8 task-col mx-auto">
 
-<li>
+    <li>
 
- <div class="task-date">
-
-
+      <div class="task-date">
 
 
-<div class="task--created-at">
+        <div class="task--created-at">
 
-<span data-toggle="tooltip" data-placement="right" data-html="true" title="<span> <%= l task.created_at, format: :long  %> </span> ">
+<span data-toggle="tooltip" data-placement="right" data-html="true" title="<span> <%= l task.created_at, format: :long %> </span> ">
 <span class='badge badge-light'>Created <%= time_ago_in_words(task.created_at) %> ago.</span>
 </span>
 
-</div>
+        </div>
+        
 
+        <% if task.completed %>
 
+          <div class="task--completed-at">
 
-<% if task.completed %>
-
-<div class="task--completed-at">
-
-<span data-toggle="tooltip" data-placement="right" data-html="true" title="<span> <%= l task.updated_at, format: :long  %> </span> ">
+<span data-toggle="tooltip" data-placement="right" data-html="true" title="<span> <%= l task.updated_at, format: :long %> </span> ">
 <span class='badge badge-light'>Completed <%= time_ago_in_words(task.updated_at) %> ago.</span>
 </span>
 
 
-</div>
+          </div>
 
-<% end %>
+        <% end %>
 
 
+      </div>
+
+      <div class="task-name">
+        <%= task.title %>
+      </div>
+
+      <div class="task-buttons">
+        <%= render "tasks/destroy_form", task: task %>
+        <%= render "tasks/update_form", task: task %>
+      </div>
+
+
+    </li>
 
 
   </div>
-
-<div class="task-name">
-<%= task.title %> 
-</div>
-
-  <div class="task-buttons">
-    <%= render "tasks/destroy_form", task: task %>
-    <%= render "tasks/update_form", task: task %>
-  </div>
-  
- 
-
-  
-
-
-
-</li>
-
-
-</div>
 </div>

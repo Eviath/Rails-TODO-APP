@@ -9,23 +9,26 @@ $('.list--show-header').find( 'span.badge' ).addClass('animation-ring').delay(50
   });
 
 
+ $completedCount = $("#completed-count-parent"),
+ $todoCount = $("#todo-count-parent"),
+ $taskCount = $("#task-count-parent"),
 
 <% if @list.tasks.length == 0 %>
-$("#task-count-parent").fadeOut()
+$taskCount.fadeOut()
 <% else %>
-$("#task-count-parent").html('<%= @list.tasks.length %>');
+$taskCount.html('<%= @list.tasks.length %>');
 <% end %>
 
 
 <% if @todo.length == 0 %>
-$("#todo-count-parent").fadeOut()
+$todoCount.fadeOut()
 <% else %>
-$("#todo-count-parent").html('<%= @todo.length %>');
+$todoCount.html('<%= @todo.length %>');
 <% end %>
 
 
 <% if @completed_tasks.length == 0 %>
-$("#completed-count-parent").fadeOut()
+$completedCount.fadeOut()
 <% else %>
-$("#completed-count-parent").html('<%= @completed_tasks.length %>');
+$completedCount.html('<%= @completed_tasks.length %>');
 <% end %>

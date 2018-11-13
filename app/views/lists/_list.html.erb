@@ -2,50 +2,49 @@
 <div id="todo-list" class="container col-md-8 todo-list">
 
 
+  <div class="row list-header">
 
 
-<div class="row list-header">
+    <div class="list-box list-name">
+      <%= list.title %>
+    </div>
+
+    <div class="list-box list-buttons ">
+
+      <%= link_to list, {data: {turbolinks: false}, class: "btn btn1 btn-outline-warning"} do %>
+        <%= icon('fas', 'sign-in-alt') %>
+      <% end %>
+
+      <%= link_to list, :class => "btn btn2 btn-outline-warning", method: :delete,
+                  data: {confirm: "Are you sure? All tasks will be removed."} do %>
+        <%= icon('far', 'trash-alt') %>
+      <% end %>
 
 
-<div class="list-box list-name">
- <%= list.title %>
-</div>
+    </div>
 
-<div class="list-box list-buttons ">
+  </div>
 
-<%= link_to list, {data: { turbolinks: false }, class: "btn btn1 btn-outline-warning"} do %>
-              <%= icon('fas', 'sign-in-alt') %>   
-        <% end %>
-
-<%= link_to list, :class => "btn btn2 btn-outline-warning", method: :delete,
-                                       data: { confirm: "Are you sure? All tasks will be removed." } do %>
-             <%= icon('far', 'trash-alt') %>    
-        <% end %>
+  <div class="row list-footer">
 
 
-</div>
-
-</div>
-
-<div class="row list-footer">
-
-
-<div class="list--footer-box col-md-6">
-<% if list.tasks.length == 0 %>
- <span>You have not added any tasks!</span>
-<% else %>
-  <span>You have</span> <span class="badge badge-light"> <%= pluralize(list.tasks.length, 'task') %></span> <span>on this list.</span>
-<% end %>
-</div>
+    <div class="list--footer-box col-md-6">
+      <% if list.tasks.length == 0 %>
+        <span>You have not added any tasks!</span>
+      <% else %>
+        <span>You have</span> <span class="badge badge-light"> <%= pluralize(list.tasks.length, 'task') %></span>
+        <span>on this list.</span>
+      <% end %>
+    </div>
 
 
+    <div class="list--footer-box-date col-md-6">
+      <span class="badge badge-light"><%= l list.created_at, format: :long %></span> |
+      <span class="badge badge-light">Created <%= time_ago_in_words(list.created_at) %> ago.</span>
+    </div>
 
-<div class="list--footer-box-date col-md-6">
- <span class="badge badge-light"><%= l list.created_at, format: :long  %></span> | <span class="badge badge-light">Created <%= time_ago_in_words(list.created_at) %> ago.</span>
-</div>
 
-
-</div>
+  </div>
 
 
 </div>

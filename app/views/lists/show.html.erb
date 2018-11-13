@@ -1,31 +1,30 @@
-
 <div class="container">
 
 
   <div class="list--show-header">
 
-    <h1><%= @list.title %>  
-    
-          <% if @list.tasks.count == 0 %>
+    <h1><%= @list.title %>
+
+      <% if @list.tasks.count == 0 %>
         <span id="task-count-parent" class="not-displayed badge badge-light"> <%= @list.tasks.count %></span>
-         <% else %>
+      <% else %>
         <span id="task-count-parent" class="badge badge-light"> <%= @list.tasks.count %></span>
-          <% end %>
-          
-          </h1> 
+      <% end %>
+
+    </h1>
 
     <div class="list--show-date">
       <h2>
         <span class="badge badge-light">
-          Created at <%= l @list.created_at, format: :long  %>
-        </span> 
+          Created at <%= l @list.created_at, format: :long %>
+        </span>
 
-          | 
+        |
 
         <span class="badge badge-light">
           <%= time_ago_in_words(@list.created_at) %> ago
         </span>
-      </h2> 
+      </h2>
     </div>
 
   </div>
@@ -40,20 +39,20 @@
       <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
 
         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
-        <span>Todo </span>
-        <% if @todo.length == 0 %>
-        <span id="todo-count-parent" class="not-displayed badge badge-light"> <%= @todo.length %></span>
-         <% else %>
-        <span id="todo-count-parent" class="badge badge-light"> <%= @todo.length %></span>
+          <span>Todo </span>
+          <% if @todo.length == 0 %>
+            <span id="todo-count-parent" class="not-displayed badge badge-light"> <%= @todo.length %></span>
+          <% else %>
+            <span id="todo-count-parent" class="badge badge-light"> <%= @todo.length %></span>
           <% end %>
         </a>
 
         <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
-        <span>Completed </span>
-        <% if @completed_tasks.length == 0 %>
-        <span id="completed-count-parent" class="not-displayed badge badge-light"> <%= @completed_tasks.length %></span>
-         <% else %>
-        <span id="completed-count-parent" class="badge badge-light"> <%= @completed_tasks.length %></span>
+          <span>Completed </span>
+          <% if @completed_tasks.length == 0 %>
+            <span id="completed-count-parent" class="not-displayed badge badge-light"> <%= @completed_tasks.length %></span>
+          <% else %>
+            <span id="completed-count-parent" class="badge badge-light"> <%= @completed_tasks.length %></span>
           <% end %>
         </a>
 
@@ -62,36 +61,34 @@
 
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-      
+
         <ul class="todo" id="todo">
-        <% @todo.each do |task| %>
-          <%= render "tasks/task", task: task %>
-        <% end %>
-      </ul>
-      
+          <% @todo.each do |task| %>
+            <%= render "tasks/task", task: task %>
+          <% end %>
+        </ul>
+
       </div>
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-      
+
         <ul class="todo" id="completed">
-        <% @completed_tasks.each do |task| %>
-          <%= render "tasks/task", task: task %>
-        <% end %>
-      </ul>
-      
+          <% @completed_tasks.each do |task| %>
+            <%= render "tasks/task", task: task %>
+          <% end %>
+        </ul>
+
       </div>
     </div>
 
   </div>
 
 
-
   <div class="form-button text-center">
-  <%= link_to("Back", root_path, :class => "btn btn-outline-warning") %>
+    <%= link_to("Back", root_path, :class => "btn btn-outline-warning") %>
   </div>
 
 
-
-<!-- END OF CONTAINER -->
+  <!-- END OF CONTAINER -->
 </div>
 
  

@@ -2,68 +2,72 @@ class TasksController < ApplicationController
 
   before_action :find_list, only: [:create, :update, :destroy]
 
-    def new
-        @task = Task.new(list_id: params[:list_id])
+  def new
+    @task = Task.new(list_id: params[:list_id])
+  end
+
+
+  # Create Task
+  def create
+    @task = @list.tasks.create(task_param)
+    @task.completed = false
+    @task.save
+
+    @todo = @list.tasks.where(completed: false).order(id: :desc)
+    @completed_tasks = @list.tasks.where(completed: true).order(id: :desc)
+
+    respond_to do |format|
+      format.html {redirect_to request.referrer || root_url}
+      format.js
     end
 
-    def create
-        @task = @list.tasks.create(task_param)
-        @task.completed = false
-        @task.save
+  end
 
-        @todo = @list.tasks.where(completed: false).order(id: :desc)
-        @completed_tasks = @list.tasks.where(completed: true).order(id: :desc)
 
-        respond_to do |format|
-          format.html { redirect_to request.referrer || root_url }
-          format.js
-        end
+  # Remove task
+  def destroy
+    @list = List.find(params[:list_id])
+    @task = Task.find(params[:id])
+    @task.destroy
 
-      end
+    @todo = @list.tasks.where(completed: false).order(id: :desc)
+    @completed_tasks = @list.tasks.where(completed: true).order(id: :desc)
 
-      def destroy
-        @list = List.find(params[:list_id])
-        @task = Task.find(params[:id])
-        @task.destroy
-        
-        @todo = @list.tasks.where(completed: false).order(id: :desc)
-        @completed_tasks = @list.tasks.where(completed: true).order(id: :desc)
-
-          respond_to do |format|
-      format.html { redirect_to request.referrer || root_url }
+    respond_to do |format|
+      format.html {redirect_to request.referrer || root_url}
       format.js
     end
   end
 
 
-      def update
-        
-        @task = Task.find(params[:id])
-        if @task.completed
-          @task.update(completed: false)
-        else
-          @task.update(completed: true)
-        end
+  def update
 
-        @todo = @list.tasks.where(completed: false).order(id: :desc)
-        @completed_tasks = @list.tasks.where(completed: true).order(id: :desc)
+    @task = Task.find(params[:id])
+    if @task.completed
+      @task.update(completed: false)
+    else
+      @task.update(completed: true)
+    end
 
-        respond_to do |format|
-          format.html { redirect_to request.referrer || root_url }
-          format.js
-        end
-      end
+    @todo = @list.tasks.where(completed: false).order(id: :desc)
+    @completed_tasks = @list.tasks.where(completed: true).order(id: :desc)
 
-
-    private
-
-    def find_list
-      @list = List.find(params[:list_id])
+    respond_to do |format|
+      format.html {redirect_to request.referrer || root_url}
+      format.js
+    end
   end
 
-    def task_param
+
+  private
+
+  def find_list
+    @list = List.find(params[:list_id])
+  end
+
+  def task_param
     params.require(:task).permit(:title)
   end
-  
+
 
 end
