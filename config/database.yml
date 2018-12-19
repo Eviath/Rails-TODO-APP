@@ -7,7 +7,7 @@
 default: &default
   adapter: postgresql
   username: postgres
-  password: postgresuser
+  password: postgrespass
   pool: 5
   host: localhost
   encoding: unicode
